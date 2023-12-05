@@ -11,6 +11,7 @@
 <title>보험가입</title>
 </head>
 <body>
+	<a href="../../home.jsp">메인 돌아가기</a>    
  <% 
     String customerID = null;
    	if (session.getAttribute("customerID") != null){
@@ -155,7 +156,7 @@
 		</div>
  		 <div>
 			<label>가입하시겠습니까? </label>
-			<input type="checkbox" name="policy_join">
+			<input type="checkbox" name="joinPolicy">
 		</div>
 		<button type="submit">등록</button>
 	</form>

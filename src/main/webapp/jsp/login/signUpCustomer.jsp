@@ -7,34 +7,11 @@
 <title>회원가입</title>
 </head>
 <body>
-<!-- 	<div>
-		<h1>Form (Get 방식)</h1>
-		<p>폼을 통해 데이트를 전송해봅시다.</p>
-	</div>
-	<form action="result.jsp" method="get">
-		<div>
-			<label>이름</label> <input name="name" type="text"/> 
-		</div>
-		<div>
-			<label>성별</label>
-			<input type="radio" name="gender" value="male" checked> Male<br>
-			<input type="radio" name="gender" value="female"> Female<br>
-			<input type="radio" name="gender" value="other"> Other
-		</div>
-		<div>
-			<label>나이</label> <input name="age" type="number" min="1" max="80" value="10" required=""/>
-		</div>
-		<div>
-			<label>데이터베이스에 등록</label>
-			<input type="checkbox" name="register">
-		</div>
-		
-		<button type="submit">전송</button>
-	</form>
- -->	<div>
+<div>
+	<a href="../../home.jsp">메인 돌아가기</a>    
 		<h1>회원가입</h1>
 	</div>
-	<form action="result.jsp" method="post">
+	<form action="successCustomer.jsp" method="post">
 		<div>
 			<label>아이디</label> <input name="customerLoginID" type="text" maxlength='20'/>
 		</div>
@@ -86,7 +63,7 @@
 		</div>
  		 <div>
 			<label>데이터베이스에 등록</label>
-			<input type="checkbox" name="customer_join">
+			<input type="checkbox" name="joinCustomer">
 		</div>
 		<button type="submit">전송</button>
 	</form>

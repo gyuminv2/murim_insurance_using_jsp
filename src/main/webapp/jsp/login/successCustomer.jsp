@@ -26,7 +26,7 @@
 				redirect = "welcome.jsp";
 			}
 			
-			String insert = request.getParameter("customer_join");
+			String insert = request.getParameter("joinCustomer");
 			
 			// name이 james가 아닐 때
 			if (insert != null && insert.equals("on")) {
@@ -37,7 +37,7 @@
 				session.setAttribute("clan", clan);
 				session.setAttribute("customerLoginID", customerLoginID);
 				session.setAttribute("customerPassword", customerPassword);
-				redirect = "customer_join.jsp";
+				redirect = "joinCustomer.jsp";
 			}
 	
 			if (redirect != null)
