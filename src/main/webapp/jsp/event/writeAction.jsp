@@ -16,7 +16,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; c harset=UTF-8">
-<title>JSP BBS</title>
+<title>Event</title>
 </head>
 <body>
     <%
@@ -30,7 +30,8 @@
             script.println("alert('로그인하세요.')");
             script.println("location.href = 'login.jsp'");    // 메인 페이지로 이동
             script.println("</script>");
-    	}else{
+    	}
+    	else{
     		if (event.getTitle() == null || event.getContent() == null){
         		PrintWriter script = response.getWriter();
                 script.println("<script>");

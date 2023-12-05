@@ -45,17 +45,18 @@
 			
 			String redirect = null;
 			
-			String insert = request.getParameter("policy_join");
+			String insert = request.getParameter("joinPolicy");
 			
 			if (insert != null && insert.equals("on")) {
 				session.setAttribute("type", type);
 				session.setAttribute("premium", premium);
 				session.setAttribute("customerLoginID", customerLoginID);
-				redirect = "policy_join.jsp";
+				redirect = "joinPolicy.jsp";
 			}
 			
 			if (redirect != null)
 				response.sendRedirect(redirect);
+			
 	%>
 	<div>
 		<h1>결과</h1>
@@ -91,8 +92,8 @@
 	</div>
 	<%
 		} catch (NumberFormatException e) {
+		System.out.println(e);
 	%>
-	
 	<h1>이런 !</h1>
 	<p>
 		올바른 정보를 입력해주세요... :(

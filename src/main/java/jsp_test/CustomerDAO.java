@@ -37,8 +37,80 @@ public class CustomerDAO {
 			return -1; // 아이디 없음 
 		}catch(Exception e) {
 			e.printStackTrace();
-			
 		}
 		return -2; //DB 오류 
+	}
+	
+	public String getRank(String customerLoginID) {
+		String SQL ="SELECT c.levelName FROM Customer cu JOIN MartialArtLevel c ON cu.MartialArtLevelID = c.levelID WHERE cu.customerLoginID = ?";
+		try {
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, customerLoginID); //sql Injection 공격 방어 수단 : 1번째 물음표에 userID 입력
+			rs = pstmt.executeQuery(); // 쿼리 실행
+			if (rs.next()) {
+				String str = rs.getString("levelName");
+				return str;
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	public String getClan(String customerLoginID)
+	{
+		String SQL ="SELECT c.name FROM Customer cu JOIN Clan c ON cu.ClanAffiliationID = c.ClanID WHERE cu.customerLoginID = ?";
+		try {
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, customerLoginID); //sql Injection 공격 방어 수단 : 1번째 물음표에 userID 입력
+			rs = pstmt.executeQuery(); // 쿼리 실행
+			if (rs.next()) {
+				String str = rs.getString("name");
+				return str;
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	public String getRep(String customerLoginID)
+	{
+		String SQL ="SELECT c.reputation FROM Customer cu JOIN Clan c ON cu.ClanAffiliationID = c.ClanID WHERE cu.customerLoginID = ?";
+		try {
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, customerLoginID); //sql Injection 공격 방어 수단 : 1번째 물음표에 userID 입력
+			rs = pstmt.executeQuery(); // 쿼리 실행
+			if (rs.next()) {
+				String str = rs.getString("reputation");
+				return str;
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	public Customer getCustomer(String customerLoginID) {
+	    String SQL = "SELECT name, age, gender, MartialArtLevelID, ClanAffiliationID, customerLoginID, customerPassword FROM Customer WHERE customerLoginID = ?";
+	    try {
+	        pstmt = conn.prepareStatement(SQL);
+	        pstmt.setString(1, customerLoginID);
+	        rs = pstmt.executeQuery();
+	        if (rs.next()) {
+	            Customer customer = new Customer();
+	            customer.setName(rs.getString(1));
+	            customer.setAge(rs.getInt(2));
+	            customer.setGender(rs.getString(3));
+	            customer.setMartialArtLevelID(rs.getInt(4));
+	            customer.setClanAffiliationID(rs.getInt(5));
+	            customer.setCustomerLoginID(rs.getString(6));
+	            customer.setCustomerPassword(rs.getString(7));
+	            return customer;
+	        }
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	    return null;
 	}
 }

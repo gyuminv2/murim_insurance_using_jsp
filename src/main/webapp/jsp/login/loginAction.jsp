@@ -10,7 +10,7 @@
  
 <head>
 <meta http-equiv="Content-Type" content="text/html; c harset=UTF-8">
-<title>JSP BBS</title>
+<title>Login</title>
 </head>
 <body>
     <% // 자바 코드 삽입 
