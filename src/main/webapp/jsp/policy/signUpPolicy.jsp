@@ -25,7 +25,7 @@
 	<div>
 		<a href="../../home.jsp">메인 돌아가기</a>
 	</div>
-	<form action="writeTest.jsp" method="post">
+	<form action="writePolicy.jsp" method="post">
 	<div>
 		<h1>보험 가입</h1>
 	</div>
@@ -55,10 +55,6 @@
 			        <option value="생명보험">생명보험</option>
 			        <option value="상해보험">상해보험</option>
 		     	</select>
-		     			<input type="hidden" name="customerLoginID" value="<%=customer.getCustomerLoginID()%>">
-						<input type="hidden" name="gender" value="<%=customer.getGender()%>">
-						<input type="hidden" name="levelName" value="<%=customer.getCustomerLoginID()%>">
-						<input type="hidden" name="reputation" value="<%=customer.getCustomerLoginID()%>">
 		</div>
  		 <div>
 			<label>가입하시겠습니까? </label>

@@ -6,6 +6,7 @@ public class Claim {
 	private String claimDate;
 	private int amount;
 	private String reason;
+	private boolean result;
 	
 	public int getClaimID() {
 		return claimID;
@@ -37,6 +38,10 @@ public class Claim {
 	public void setReason(String reason) {
 		this.reason = reason;
 	}
-	
-	
+	public boolean getResult() {
+		return result;
+	}
+	public void setResult(boolean result) {
+		this.result = result;
+	}
 }

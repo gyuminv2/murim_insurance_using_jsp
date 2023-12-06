@@ -1,5 +1,7 @@
 package jsp_test;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -51,7 +53,7 @@ public class ClaimDAO {
 	}
 
 	public int write(String customerLoginID, String claimDate, int amount, String reason) {
-		String SQL = "INSERT INTO Claim VALUES (?, ?, ?, ?, ?)";
+		String SQL = "INSERT INTO Claim VALUES (?, ?, ?, ?, ?, 0)";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
 			pstmt.setInt(1, getNext());
@@ -65,4 +67,92 @@ public class ClaimDAO {
 		}
 		return -1;
 	}
+	
+    public List<Claim> getClaimsByCustomer(String customerLoginID) {
+        List<Claim> claims = new ArrayList<>();
+        String SQL = "SELECT * FROM Claim WHERE customerLoginID = ?";
+        try {
+            PreparedStatement pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, customerLoginID);
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+                Claim claim = new Claim();
+                claim.setClaimID(rs.getInt("claimID"));
+                claim.setCustomerLoginID(rs.getString("customerLoginID"));
+                claim.setClaimDate(rs.getString("claimDate"));
+                claim.setAmount(rs.getInt("amount"));
+                claim.setReason(rs.getString("reason"));
+                claim.setResult(rs.getBoolean("result"));
+                claims.add(claim);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return claims;
+    }
+    
+    public int updateClaimAmount(int claimID, int paymentAmount) {
+        String SQL = "UPDATE Claim SET amount = ? WHERE claimID = ?";
+
+        try (PreparedStatement pstmt = conn.prepareStatement(SQL)) {
+            pstmt.setLong(1, paymentAmount);
+            pstmt.setInt(2, claimID);
+
+            return pstmt.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return -1; // DB error
+    }
+    
+    public List<Claim> getAllClaims() {
+        List<Claim> claims = new ArrayList<>();
+        String SQL = "SELECT * FROM Claim";
+        
+        try {
+            PreparedStatement pstmt = conn.prepareStatement(SQL);
+            rs = pstmt.executeQuery();
+            
+            while (rs.next()) {
+                Claim claim = new Claim();
+                claim.setClaimID(rs.getInt("claimID"));
+                claim.setCustomerLoginID(rs.getString("customerLoginID"));
+                claim.setClaimDate(rs.getString("claimDate"));
+                claim.setAmount(rs.getInt("amount"));
+                claim.setReason(rs.getString("reason"));                
+                claim.setResult(rs.getBoolean("result"));                
+                claims.add(claim);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        return claims;
+    }
+    
+    public boolean updateClaimResult(int claimID) {
+        String SQL = "UPDATE Claim SET result = true WHERE claimID = ?";
+        
+        try {
+            PreparedStatement pstmt = conn.prepareStatement(SQL);
+            pstmt.setInt(1, claimID);
+            int rowsAffected = pstmt.executeUpdate();
+            return rowsAffected > 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    
+    public void acceptClaim(int claimID) {
+        String SQL = "UPDATE Claim SET result = true WHERE claimID = ?";
+        try {
+            PreparedStatement pstmt = conn.prepareStatement(SQL);
+            pstmt.setInt(1, claimID);
+            pstmt.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

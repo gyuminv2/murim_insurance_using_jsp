@@ -1,5 +1,7 @@
 package jsp_test;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -51,5 +53,26 @@ public class PolicyDAO {
 		}
 		return -1; //DB 오류 
 	}
+	
+	public List<Policy> getPoliciesByCustomer(String customerLoginID) {
+	    List<Policy> policies = new ArrayList<>();
+	    String SQL = "SELECT * FROM Policy WHERE customerLoginID = ?";
+	    try {
+	        pstmt = conn.prepareStatement(SQL);
+	        pstmt.setString(1, customerLoginID);
+	        rs = pstmt.executeQuery();
 
+	        while (rs.next()) {
+	            Policy policy = new Policy();
+	            policy.setPolicyId(rs.getInt("policyID"));
+	            policy.setType(rs.getString("type"));
+	            policy.setPremium(rs.getInt("premium"));
+	            policy.setCustomerLoginId(rs.getString("customerLoginID"));
+	            policies.add(policy);
+	        }
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	    return policies;
+	}
 }
