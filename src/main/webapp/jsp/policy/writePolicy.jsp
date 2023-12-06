@@ -5,11 +5,18 @@
 <%@ page import = "jsp_test.PolicyDAO" %>
 <%@ page import = "jsp_test.Customer" %>
 <%@ page import = "jsp_test.CustomerDAO" %>
+<%@ page import = "jsp_test.PaymentDAO" %>
+<%@ page import = "jsp_test.PolicyCustomerLoginIdDAO" %>
 
 <jsp:useBean id="policy" class="jsp_test.Policy" scope="page"></jsp:useBean>
 <jsp:setProperty name="policy" property="type"/>
 <jsp:setProperty name="policy" property="premium"/>
 <jsp:setProperty name="policy" property="customerLoginId"/>
+
+<%
+    // Set the policyId property with the next available ID
+    policy.setPolicyId(new jsp_test.PolicyDAO().getNext());
+%>
 
 <!DOCTYPE html>
 <html>
@@ -41,6 +48,9 @@
         		PolicyDAO policyDAO = new PolicyDAO();
         		Customer customer = new CustomerDAO().getCustomer(customerID);
             	CustomerDAO customerDAO = new CustomerDAO();
+            	PolicyCustomerLoginIdDAO p_c_idDAO = new PolicyCustomerLoginIdDAO(); 
+            	PaymentDAO paymentDAO = new PaymentDAO();
+            	
 				String type = request.getParameter("type");
 				String gender = customer.getGender();
 				String levelName = customerDAO.getClan(customerID);
@@ -74,7 +84,9 @@
 				premium += type_price + level_price + reput_price + gender_price;
 				
                 int result = policyDAO.write(policy.getType(), premium, customerID);
-                if (result == -1){ // 글쓰기 실패시
+    			int p_c_result = p_c_idDAO.write(policy.getPolicyId(), customerID);
+                int payment_result = paymentDAO.write(customerID, policy.getPolicyId(), premium);
+                if (result == -1 || p_c_result == -1 || payment_result == -1){ // 글쓰기 실패시
                     PrintWriter script = response.getWriter();
                     script.println("<script>");
                     script.println("alert('글쓰기에 실패했습니다.')");

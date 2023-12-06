@@ -24,7 +24,7 @@
     }
 
 %>
-	<a class ="navbar-brand" href="../../home.jsp">메인 돌아가기</a>
+	<a href="../../home.jsp">메인 돌아가기</a>
     	    <table border="1" style= "text-align: center; boarder: 1px solid #dddddd">
     	    	<thead>
     	    	<tr>
