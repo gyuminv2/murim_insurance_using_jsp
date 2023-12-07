@@ -11,7 +11,9 @@
 
 <!DOCTYPE HTML>
 <html>
+	<link rel="stylesheet" href="../../css/styles.css">
 <div>
+ 	<a href="../../home.jsp">메인 돌아가기</a>
 	<h1>내 정보</h1>
 </div>
  <body>
@@ -31,13 +33,13 @@
  	%>
 	<table>
 		<tr>
-			<td>아이디</td>
-			<td>이름</td>
-			<td>성별</td>
-			<td>나이</td>
-			<td>무술등급</td>
-			<td>문파</td>
-			<td>명성</td>
+			<th>아이디</th>
+			<th>이름</th>
+			<th>성별</th>
+			<th>나이</th>
+			<th>무술등급</th>
+			<th>문파</th>
+			<th>명성</th>
 		</tr>
 		<tr>
 			<td><%=customer.getCustomerLoginID()%></td>
@@ -52,8 +54,8 @@
 		<h2>보험 이력</h2>
 	<table>
         <tr>
-            <td>보험종류</td>
-            <td>보험가격</td>
+            <th>보험종류</th>
+            <th>보험가격</th>
         </tr>
         <% for (Policy policy : policies) { %>
             <tr>
@@ -65,10 +67,10 @@
 		<h2>청구 이력</h2>
 		<table>
         <tr>
-            <td>청구날짜</td>
-            <td>반환 보험료</td>
-            <td>청구내용</td>
-            <td>청구 결과</td>
+            <th>청구날짜</th>
+            <th>반환 보험료</th>
+            <th>청구내용</th>
+            <th>청구 결과</th>
 	    <% for (Claim claim : claims) { %>
 	    <tr>
 	        <td><%= claim.getClaimDate() %></td>

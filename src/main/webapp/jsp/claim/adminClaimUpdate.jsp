@@ -25,11 +25,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; c harset=UTF-8">
-<title>Claim Success</title>
+	<meta http-equiv="Content-Type" content="text/html; c harset=UTF-8">
+	<title>Claim Success</title>
+	<link rel="stylesheet" href="../../css/styles.css">
 </head>
 <body>
-<h1> 청구 변경에 성공하셨습니다. </h1>
-<p>	<a href="../../home.jsp">홈으로 돌아가기</a> </p>
+	<p>	<a href="../../home.jsp">홈으로 돌아가기</a> </p>
+	<h1> 청구 변경에 성공하셨습니다. </h1>
 </body>
 </html>

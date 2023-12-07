@@ -7,8 +7,9 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>보험 가입</title>
+	<meta charset="UTF-8">
+	<title>보험 가입</title>
+	<link rel="stylesheet" href="../../css/styles.css">
 </head>
  <% 
     String customerID = null;
@@ -31,13 +32,13 @@
 	</div>
 		<table border="1">
 		<tr>
-			<td>아이디</td>
-			<td>이름</td>
-			<td>성별</td>
-			<td>나이</td>
-			<td>무술등급</td>
-			<td>문파</td>
-			<td>명성</td>
+			<th>아이디</th>
+			<th>이름</th>
+			<th>성별</th>
+			<th>나이</th>
+			<th>무술등급</th>
+			<th>문파</th>
+			<th>명성</th>
 		</tr>
 		<tr>
 			<td><%=customer.getCustomerLoginID()%></td>

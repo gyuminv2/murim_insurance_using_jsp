@@ -3,10 +3,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>입력 결과</title>
+	<meta charset="UTF-8">
+	<title>입력 결과</title>
+	<link rel="stylesheet" href="../../css/styles.css">
 </head>
 <body>
+	<a href="../../home.jsp">메인 돌아가기</a>   
 	<%
 		try {
 			String name = request.getParameter("name");
@@ -73,7 +75,7 @@
 	
 	<h1>이런 !</h1>
 	<p>
-		올바른 정보를 입력해주세요... :(
+	<font color="white">올바른 정보를 입력해주세요... :(</font><br>
 		<%
 		}
 	%>

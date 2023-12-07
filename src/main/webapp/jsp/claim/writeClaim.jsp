@@ -3,8 +3,9 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>청구서 작성</title>
+	<meta charset="UTF-8">
+	<title>청구서 작성</title>
+	<link rel="stylesheet" href="../../css/styles.css">
 </head>
  <%
     String customerID = null;
@@ -19,14 +20,11 @@
     			<table class= "table table-stripped" style= "text-align: center; boarder: 1px solid #dddddd">
 	    	    	<thead>
 		    	    	<tr>
-		    	    		<th colspan= "2" style= "background-color: #eeeeee; text-align: center;">청구서 작성</th>
+		    	    		<th colspan= "2" style= "background-color: black; text-align: center;">청구서 작성</th>
 		    	    	</tr>
 	    	    	</thead>
 			    	<tbody>
-<!-- 			    		<tr>
-			    			<td><input type="text" placeholder="글 제목"  name="title" maxlength="50" ></td>
-			    		</tr>
- -->			    		<tr>
+ 				    		<tr>
 			    			<td><textarea placeholder="청구 내용"  name="reason" maxlength="2048" style= "height:350px" ></textarea></td>
 			    		</tr>
 			    	</tbody>

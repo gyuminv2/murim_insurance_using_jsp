@@ -3,8 +3,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>회원가입</title>
+	<meta charset="UTF-8">
+	<title>회원가입</title>
+	<link rel="stylesheet" href="../../css/styles.css">
 </head>
 <body>
 <div>
@@ -27,8 +28,10 @@
 		<div>
 			<label>성별</label>
 			<div>
-				<input type="radio" name="gender" value="남" checked> 남성<br>
-				<input type="radio" name="gender" value="여"> 여성<br>
+				<input type="radio" name="gender" value="남" checked>
+					<font color="white">남자</font><br>
+				<input type="radio" name="gender" value="여">
+					<font color="white">여자</font><br>
 			</div>
  		</div>
 		<div>

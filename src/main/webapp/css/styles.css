@@ -1,0 +1,82 @@
+body {
+    background-image: url('../image/murim.png');
+    background-size: contain;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #800000;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+h1 {
+    color: #FFFF00;
+    font-size: 50px;
+}
+
+h2 {
+    color: #FFFF00;
+	font-size: 35px;
+}
+
+button {
+    margin-top: 10px;
+    background-color: #FFFF00;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: white;
+}
+
+a {
+    color: white;
+    font-size: 25px;
+}
+
+label {
+    color: #FFFF00; /* Set label text color */
+    font-size: 20px; /* Set label font size */
+    margin-right: 10px; /* Add some right margin for spacing */
+}
+
+input {
+    padding: 8px; /* Add padding to the input */
+    margin: 5px 0; /* Add margin to the input for spacing */
+    border: 1px solid #FFFF00; /* Add a border with color */
+    border-radius: 3px; /* Add border radius for rounded corners */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px; /* Add margin to the table for spacing */
+}
+
+th, td {
+    border: 1px solid #FFFF00; /* Add border to table cells */
+    padding: 10px; /* Add padding to table cells */
+    text-align: center;
+    color:white; 
+}
+
+th {
+    background-color: black; /* Background color for table headers */
+    color: #FFFF00;
+}
+
+tr:nth-child(even) {
+    background-color: #800000; /* Background color for even rows */
+}
+
+input[type=submit] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: none;
+  background-color: #FFFF00;
+  color: black;
+}

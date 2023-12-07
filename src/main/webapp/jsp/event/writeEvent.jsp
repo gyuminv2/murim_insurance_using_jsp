@@ -3,8 +3,9 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>사건 작성</title>
+	<meta charset="UTF-8">
+	<title>사건 작성</title>
+	<link rel="stylesheet" href="../../css/styles.css">
 </head>
  <% 
     String customerID = null;
@@ -24,7 +25,7 @@
     			<table style= "text-align: center; boarder: 1px solid #dddddd">
 	    	    	<thead>
 		    	    	<tr>
-		    	    		<th colspan= "2" style= "background-color: #eeeeee; text-align: center;">사건 작성</th>
+		    	    		<th colspan= "2" style= "background-color: black; text-align: center;">사건 작성</th>
 		    	    	</tr>
 	    	    	</thead>
 			    	<tbody>
