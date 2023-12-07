@@ -8,8 +8,9 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>사건 작성</title>
+	<meta charset="UTF-8">
+	<title>사건 작성</title>
+	<link rel="stylesheet" href="../../css/styles.css">
 </head>
 <body>
  <% 
@@ -28,12 +29,12 @@
     	    <table border="1" style= "text-align: center; boarder: 1px solid #dddddd">
     	    	<thead>
     	    	<tr>
-    	    		<th style= "background-color: #eeeeee; text-align: center;">번호</th>
-    	    		<th style= "background-color: #eeeeee; text-align: center;">제목</th>
-    	    		<th style= "background-color: #eeeeee; text-align: center;">작성자</th>
-    	    		<th style= "background-color: #eeeeee; text-align: center;">작성일</th>
-    	    		<th style= "background-color: #eeeeee; text-align: center;">상대 문파</th>
-    	    		<th style= "background-color: #eeeeee; text-align: center;">부상 정도</th>
+    	    		<th style= "background-color: black; text-align: center;">번호</th>
+    	    		<th style= "background-color: #black; text-align: center;">제목</th>
+    	    		<th style= "background-color: #black; text-align: center;">작성자</th>
+    	    		<th style= "background-color: #black; text-align: center;">작성일</th>
+    	    		<th style= "background-color: #black; text-align: center;">상대 문파</th>
+    	    		<th style= "background-color: #black; text-align: center;">부상 정도</th>
     	    	</tr>
     	    	</thead>
     	    	<tbody>
@@ -45,7 +46,7 @@
     	    			%>
     	    			<tr>
     	    				<td><%= list.get(i).getEventID() %></td>
-							<td><a href ="viewEvent.jsp?eventID=<%=list.get(i).getEventID()%>"><%=list.get(i).getTitle().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replaceAll(">", "&gt;").replaceAll("\n","<br>") %></a></td>
+							<td style= "background-color: #8B4513;"><a href ="viewEvent.jsp?eventID=<%=list.get(i).getEventID()%>"><%=list.get(i).getTitle().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replaceAll(">", "&gt;").replaceAll("\n","<br>") %></a></td>
     	    				<td><%= list.get(i).getCustomerLoginID() %></td>
 							<td><%= list.get(i).getEventDate()%></td>
 							<td><%= list.get(i).getRelatedClan() %></td>

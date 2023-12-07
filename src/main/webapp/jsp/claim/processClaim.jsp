@@ -6,6 +6,7 @@
 
 <!DOCTYPE HTML>
 <html>
+	<link rel="stylesheet" href="../../css/styles.css">
  <body>
 <div>
 	<h1>청구 처리</h1>
