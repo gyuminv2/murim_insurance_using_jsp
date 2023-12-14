@@ -7,7 +7,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="../../css/styles.css">
 <title>글 자세히 보기</title>
 </head>
 <body>
@@ -36,7 +37,7 @@
             <table style="text-align:center; border:1px solid #dddddd">
                 <thead>
                     <tr>
-                        <th colspan="3" style="background-color:#eeeeee; text-align:center;">사건 글 보기</th>
+                        <th colspan="3" style="background-color: black; text-align:center;">사건 글 보기</th>
                     </tr>
                 </thead>
                 <tbody>
